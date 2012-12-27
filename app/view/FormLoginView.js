@@ -8,7 +8,7 @@ Ext.define("sencha.view.FormLoginView", {
 		items:[
 			{
 			xtype: 'fieldset',
-            title: 'Please login',
+            title: 'Welcome to JIRA Issue Tracking System',
             items: [{
             	id: "username-id",
             	xtype: "textfield",
@@ -19,6 +19,20 @@ Ext.define("sencha.view.FormLoginView", {
             	label: "Password",
             	name: "password",
             	id: "password-id",
+            },
+            {
+            	xtype: "textfield",
+            	label: "Server URL",
+            	name: "serverurl",
+            	id: "serverurl-id",
+            	placeHolder: "http://host:port"
+            },
+            {
+            	xtype: "textfield",
+            	label: "Soap URL",
+            	name: "soapurl",
+            	id: "soapurl-id",
+            	placeHolder: "http://host:port"
             }]
 		
 		},
@@ -27,43 +41,8 @@ Ext.define("sencha.view.FormLoginView", {
         	ui: "action",
         	text: "Login",
         	width: 100,
-        	handler:function(){ 
-        		Ext.Viewport.setMasked({
-            		xtype: "loadmask"
-            	});
-        		var username = Ext.getCmp("username-id").getValue();
-        		var password = Ext.getCmp("password-id").getValue();
-        		console.log(sencha.app.sencha.loginToken)
-        		Ext.AjaxFixed.request({
-                    url: "https://api.vietnamworks.com/users/login",
-                    method: "POST",
-                    headers: {"CONTENT-MD5": "4c443c7e2c515d6b4b4d693c2f63434a7773226a614846733c4c4d4348"},
-                    jsonData: {
-	                    "user_email": "ngmng204@yahoo.com",
-	                    "user_password": "30032008"
-                    },
-                    
-                    success: function(res){
-                          //console.log(res.responseText);
-                          var data = res.responseText.toString();
-                          console.log(data);
-                          dataDecoded = Ext.decode(data);
-                          sencha.app.sencha.loginToken = dataDecoded.data.login_token;
-                          if(sencha.app.secha.loginToken != null){
-                        	  //successful
-                        	  Ext.Viewport.setMasked(false);
-                          }else{
-                        	  //failed
-                          }
-                          
-                    },
-                    failure: function(err){
-                          console.log(err);
-                          //alert("failed")
-                    }
-        		});
-        		
-        	}
+        	id: 'login-btn',
+        	
         }]
 	}
 });

@@ -1,2 +1,4 @@
-sencha_contest
-==============
+working-sencha-git
+==================
+
+first app

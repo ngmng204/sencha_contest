@@ -6,12 +6,20 @@ Ext.define("sencha.store.XmlLocalStore",{
 		model: 'sencha.model.XmlModel',
 		
 		storeId: 'XmlLocalStore',
+		
+		grouper: {
+            groupFn: function(record) {
+            	
+                return record.get('type');
+            },
+            
+        },
 		proxy: {
 	        type: 'ajax',
-	        url : 'data/users.xml',
+	        url : 'dashboard.xml',
 	        reader: {
 	            type: 'xml',
-	            record: 'user',
+	            record: 'item',
 	        }
 	    }
 	}

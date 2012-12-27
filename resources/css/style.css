@@ -1,0 +1,16 @@
+.header {
+	background: #4074C2;
+	color: white;
+	font-size: 14px;
+	font-family: helvetica;
+	letter-spacing: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.gig {
+background: white;
+border-bottom: 1px solid #BEB5B5;
+color: black;
+font-size: 14px;
+padding: 10px;
+}

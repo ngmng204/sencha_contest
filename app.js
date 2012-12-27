@@ -6,6 +6,7 @@ function globalVariables(){
 			"Long":-8.473871
 	};
 	res.loginToken = null;
+	res.dashBoardContent = null;
 	return res;
 }
 Ext.Loader.setPath({
@@ -22,13 +23,16 @@ Ext.application({
              'SimpleListModel',
              'JsonLocalProxyModel',
              'JsonPModel',
-             'XmlModel'
+             'XmlModel',
+             'ProjectModel'
+            
     ],
     stores: [
              'SimpleListStore',
              'JsonLocalProxy',
              'JsonPProxyStore',
-             'XmlLocalStore'
+             'XmlLocalStore',
+             'ProjectStore'
     ],
     views: [
             'Main' , 
@@ -41,8 +45,15 @@ Ext.application({
             
             'FormLoginView',
             //'FormLoginFrame'
+            
+            'CardView',
+            'DashBoardView',
+            'ProjectList'
     ],
-    
+    controllers:[
+                 'LoginController',
+                 'DashBoardController'
+                 ],
     icon: {
         '57': 'resources/icons/Icon.png',
         '72': 'resources/icons/Icon~ipad.png',
@@ -65,12 +76,11 @@ Ext.application({
     
     
     
-    launch: function() {
-    	
+    launch: function() {    	
         // Destroy the #appLoadingIndicator element    	
         Ext.fly('appLoadingIndicator').destroy();
         // Initialize the main view
-        Ext.Viewport.add(Ext.create('sencha.view.FormLoginView'));
+        Ext.Viewport.add(Ext.create('sencha.view.CardView'));
     },
     onUpdated: function() {
         Ext.Msg.confirm(

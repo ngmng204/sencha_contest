@@ -1,15 +1,19 @@
 Ext.define('sencha.view.XmlListView', {
-    extend: 'Ext.List',
+    extend: 'Ext.dataview.List',
     xtype: 'xmllistview',
-
+    id :"xmllistview-id",
     config: {
-        title: 'Xml List View',
-		iconCls: 'user',
-        //grouped: true, 
-        store: 'XmlLocalStore',
-        onItemDisclosure: true,
-        useTitleAsBackText: true,
-        itemTpl: '{name}'
-        
+    	store: 'XmlLocalStore',
+    	grouped: true, 
+        itemTpl: [
+            '<div>{name}</div>'
+        ],
+        items: [
+            {
+                xtype: 'toolbar',
+                docked: 'top'
+            }
+        ]
     }
+
 });

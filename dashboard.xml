@@ -1,0 +1,55 @@
+
+<dashboard>
+   <item>
+      <id>jql-search-id</id>
+      <name>JQL Search</name>  
+      <type>Search</type>    
+   </item>
+   <item>
+      <id>text-search-id</id>
+      <name>Text Search</name>    
+      <type>search</type>  
+   </item>
+   
+   <item>
+      <id>create-issue-id</id>
+      <name>Create issue</name>   
+      <type>Create issue</type>     
+   </item>
+   
+   
+   
+   
+   
+   
+   <item>
+      <id>status-all</id>
+      <name>All status</name>   
+      <type>Your issue by status</type>     
+   </item>
+   <item>
+      <id>status-open</id>
+      <name>Open</name>   
+       <type>Your issue by status</type>       
+   </item>
+   <item>
+      <id>status-resolved</id>
+      <name>Resolved</name>   
+      <type>Your issue by status</type>        
+   </item>
+   <item>
+      <id>status-reopen</id>
+      <name>Reopen</name>   
+      <type>Your issue by status</type>     
+   </item>
+   <item>
+      <id>status-closed</id>
+      <name>Closed</name>   
+       <type>Your issue by status</type>          
+   </item>
+   <item>
+      <id>status-ba-approved</id>
+      <name>BA Approved</name>   
+       <type>Your issue by status</type>        
+   </item>
+</dashboard>
